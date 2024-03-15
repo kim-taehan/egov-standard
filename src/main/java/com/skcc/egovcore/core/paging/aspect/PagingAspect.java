@@ -1,6 +1,5 @@
 package com.skcc.egovcore.core.paging.aspect;
 
-import com.skcc.egovcore.core.paging.annotation.PageDefault;
 import com.skcc.egovcore.core.paging.annotation.PageQuery;
 import com.skcc.egovcore.core.paging.dto.PageDto;
 import com.skcc.egovcore.core.paging.dto.Paging;
@@ -28,8 +27,7 @@ public class PagingAspect {
     private final PagingMapper pagingMapper;
 
     @Around("@annotation(postMapping) && (args(paging,..) || args(..,paging))")
-    public Object doCheckMethod(ProceedingJoinPoint joinPoint, PostMapping postMapping, Paging paging) throws Throwable {
-
+    public Object doPagingByController(ProceedingJoinPoint joinPoint, PostMapping postMapping, Paging paging) throws Throwable {
         HttpServletRequest request = extractRequest();
         request.setAttribute("page", paging.getPage());
         ResEntity ret = (ResEntity) joinPoint.proceed();

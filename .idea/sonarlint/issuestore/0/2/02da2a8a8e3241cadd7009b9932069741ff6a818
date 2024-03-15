@@ -1,17 +1,10 @@
 
 e
-java:S6355"HAdd 'since' and/or 'forRemoval' arguments to the @Deprecated annotation.(õˆúš8â…ÄÙã1
+java:S6355"HAdd 'since' and/or 'forRemoval' arguments to the @Deprecated annotation.(õˆúš8ÊËÚ‚ä1
 W
-java:S1133"5Do not forget to remove this deprecated code someday.(ÓñÑ´üÿÿÿÿ8ã…ÄÙã1
+java:S1133"5Do not forget to remove this deprecated code someday.(ÓñÑ´üÿÿÿÿ8ËËÚ‚ä1
 J
-java:S1123"(Add the missing @deprecated Javadoc tag.(ÓñÑ´üÿÿÿÿ8ä…ÄÙã1
-\
-java:S1854"?Remove this useless assignment to local variable "enumeration".(Öü¢°8šúü·ã1
-i
-java:S1854"GRemove this useless assignment to local variable "parameterAnnotation".(§¿ñòüÿÿÿÿ8Ş„ÅÙã1
-Z
-java:S1481"8Remove this unused "parameterAnnotation" local variable.(§¿ñòüÿÿÿÿ8Ş„ÅÙã1
-M
-java:S1481"0Remove this unused "enumeration" local variable.(Öü¢°8›úü·ã1
-W	java:S125"<This block of commented-out lines of code should be removed.(Õ‰ˆ8ß„ÅÙã1
-]	java:S125)"<This block of commented-out lines of code should be removed.(Ó©ãŞşÿÿÿÿ8òÔÉÓã1
+java:S1123"(Add the missing @deprecated Javadoc tag.(ÓñÑ´üÿÿÿÿ8ËËÚ‚ä1
+X	java:S125"<This block of commented-out lines of code should be removed.(…Á„ï8ĞËÚ‚ä1
+W	java:S125"<This block of commented-out lines of code should be removed.(Õ‰ˆ8ĞËÚ‚ä1
+]	java:S125%"<This block of commented-out lines of code should be removed.(Ó©ãŞşÿÿÿÿ8ĞËÚ‚ä1
