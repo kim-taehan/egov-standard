@@ -4,6 +4,5 @@ import org.egovframe.rte.fdl.cmmn.EgovAbstractServiceImpl;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional(readOnly = true)
-public abstract class AbstractService extends EgovAbstractServiceImpl {
-
+public abstract class SkAbstractService extends EgovAbstractServiceImpl {
 }

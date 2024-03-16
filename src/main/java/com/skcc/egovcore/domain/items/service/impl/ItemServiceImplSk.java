@@ -1,6 +1,6 @@
 package com.skcc.egovcore.domain.items.service.impl;
 
-import com.skcc.egovcore.core.mvc.service.AbstractService;
+import com.skcc.egovcore.core.mvc.service.SkAbstractService;
 import com.skcc.egovcore.domain.items.mapper.ItemMapper;
 import com.skcc.egovcore.domain.items.service.ItemService;
 import com.skcc.egovcore.domain.items.vo.ItemDto;
@@ -15,7 +15,7 @@ import java.util.Map;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class ItemServiceImpl extends AbstractService implements ItemService {
+public class ItemServiceImplSk extends SkAbstractService implements ItemService {
 
     private final ItemMapper itemMapper;
 

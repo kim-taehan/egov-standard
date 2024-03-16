@@ -2,7 +2,7 @@ package com.skcc.egovcore.domain.orders.service.impl;
 
 import com.skcc.egovcore.core.config.aop.annotation.CheckMethod;
 import com.skcc.egovcore.core.mvc.mapper.MybatisMap;
-import com.skcc.egovcore.core.mvc.service.AbstractService;
+import com.skcc.egovcore.core.mvc.service.SkAbstractService;
 import com.skcc.egovcore.domain.items.mapper.ItemMapper;
 import com.skcc.egovcore.domain.items.service.ItemService;
 import com.skcc.egovcore.domain.items.vo.ItemDto;
@@ -10,6 +10,7 @@ import com.skcc.egovcore.domain.orders.mapper.OrderMapper;
 import com.skcc.egovcore.domain.orders.mapper.OrderStatus;
 import com.skcc.egovcore.domain.orders.service.OrdersService;
 import com.skcc.egovcore.domain.orders.vo.*;
+import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -23,8 +24,8 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor
-public class OrdersServiceImpl extends AbstractService implements OrdersService {
+@RequiredArgsConstructor(access = AccessLevel.PROTECTED)
+public class OrdersServiceImpl extends SkAbstractService implements OrdersService {
 
     private final OrderMapper orderMapper;
 
