@@ -44,6 +44,4 @@ public class OrdersApiControllerV2 {
         String ret = ordersService.cancelOrder(request.getOrderNo(), request);
         return ResEntity.ok(ret);
     }
-
-
 }

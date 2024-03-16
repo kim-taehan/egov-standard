@@ -21,11 +21,16 @@
         + 
     - 3.2 Layer architecture
         + 3.2.1 Controller
-            + [3.2.1.1 RestFul 방식](document%2Fspring%2Fcontroller%2FrestFul.md)
-            + [3.2.1.2 Only Post 방식](document%2Fspring%2Fcontroller%2FonlyPost.md)
-        + 3.2.2 Service
+            + [3.2.1.1 RestFul 방식](document%2Fspring%2Fcontroller%2FrestFul.md) (개발자교육 택1)
+            + [3.2.1.2 Only Post 방식](document%2Fspring%2Fcontroller%2FonlyPost.md) (개발자교육 택1)
+            + 3.2.1.3 Validation (작업중)
+        + 3.2.2 [Service](document%2Fspring%2Fservice%2Fservice_layer.md)
+            + [3.2.2.1 Transaction 관리](document%2Fspring%2Fservice%2Ftransaction.md)
         + 3.2.3 Repository
         + 3.2.4 Mapper
+            + MyBatis Sql 사용법
+            + MyBatis 문법 알고쓰자
+        + 3.2.4 Data
 
 
 * 4 Open Source
