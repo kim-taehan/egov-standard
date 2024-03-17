@@ -1,6 +1,6 @@
 package com.skcc.egovcore.domain.orders.mapper;
 
-import com.skcc.egovcore.core.mvc.mapper.MybatisMap;
+import com.skcc.egovcore.core.mvc.mapper.CamelMap;
 import com.skcc.egovcore.core.paging.annotation.PageQuery;
 import org.egovframe.rte.psl.dataaccess.EgovAbstractMapper;
 import org.springframework.stereotype.Repository;
@@ -17,11 +17,11 @@ public class OrderMapper extends EgovAbstractMapper {
     private static final String UPDATE_ORDER_STATUS = "OrdersMapperDao.updateOrderStatus";
 
     @PageQuery(SELECT_ORDERS)
-    public List<MybatisMap> selectOrders(Map param)  {
-        return (List<MybatisMap>) list(SELECT_ORDERS, param);
+    public List<CamelMap> selectOrders(Map param)  {
+        return (List<CamelMap>) list(SELECT_ORDERS, param);
     }
 
-    public MybatisMap selectOrder(String orderNo) {
+    public CamelMap selectOrder(String orderNo) {
         return selectOne(SELECT_ORDER, orderNo);
     }
 

@@ -55,7 +55,7 @@ public class OrdersServiceImpl extends AbstractService implements OrdersService 
         params.put("startDate", request.getStartDate().atTime(0, 0, 0));
         params.put("endDate", request.getEndDate().atTime(23, 59, 59));
 
-        List<MybatisMap> ret = orderMapper.selectOrders(params);
+        List<CamelMap> ret = orderMapper.selectOrders(params);
         return ret.stream()
                 .map(this::convertDto)
                 .collect(Collectors.toList());
@@ -71,8 +71,8 @@ public class OrderMapper extends EgovAbstractMapper {
     private static final String SELECT_ORDERS = "OrdersMapperDao.selectOrders";
 
     @PageQuery(SELECT_ORDERS)
-    public List<MybatisMap> selectOrders(Map param) {
-        return (List<MybatisMap>) list(SELECT_ORDERS, param);
+    public List<CamelMap> selectOrders(Map param) {
+        return (List<CamelMap>) list(SELECT_ORDERS, param);
     }
 }
 ```
@@ -90,7 +90,7 @@ public class OrderMapper extends EgovAbstractMapper {
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="OrdersMapperDao">
 
-    <select id="selectOrders" resultType ="mybatisMap" parameterType="java.util.HashMap">
+    <select id="selectOrders" resultType ="camelMap" parameterType="java.util.HashMap">
         <include refid="CommonMapper.oraclePagingPrefix"/>
         SELECT ORDER_ID, ORDER_NO
         FROM ORDERS

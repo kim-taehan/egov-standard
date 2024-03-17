@@ -1,7 +1,7 @@
 package com.skcc.egovcore.domain.orders.service.impl;
 
 import com.skcc.egovcore.core.config.aop.annotation.CheckMethod;
-import com.skcc.egovcore.core.mvc.mapper.MybatisMap;
+import com.skcc.egovcore.core.mvc.mapper.CamelMap;
 import com.skcc.egovcore.core.mvc.service.SkAbstractService;
 import com.skcc.egovcore.domain.items.mapper.ItemMapper;
 import com.skcc.egovcore.domain.items.service.ItemService;
@@ -41,7 +41,7 @@ public class OrdersServiceImpl extends SkAbstractService implements OrdersServic
         params.put("startDate", request.getStartDate().atTime(0, 0, 0));
         params.put("endDate", request.getEndDate().atTime(23, 59, 59));
 
-        List<MybatisMap> ret = orderMapper.selectOrders(params);
+        List<CamelMap> ret = orderMapper.selectOrders(params);
         return ret.stream()
                 .map(this::convertDto)
                 .collect(Collectors.toList());
@@ -49,14 +49,14 @@ public class OrdersServiceImpl extends SkAbstractService implements OrdersServic
 
     @Override
     public OrderFindResponse findOrder(String orderNo) {
-        MybatisMap order = orderMapper.selectOrder(orderNo);
+        CamelMap order = orderMapper.selectOrder(orderNo);
         long orderId = order.getLong("orderId");
-        List<MybatisMap> items = itemMapper.selectItems(orderId);
+        List<CamelMap> items = itemMapper.selectItems(orderId);
         return OrderFindResponse.of(order, items);
 
     }
 
-    private OrdersFindResponse convertDto(MybatisMap order) {
+    private OrdersFindResponse convertDto(CamelMap order) {
         return new OrdersFindResponse(order.getLong("orderId"), order.getStr("orderNo"));
     }
 
@@ -69,7 +69,7 @@ public class OrdersServiceImpl extends SkAbstractService implements OrdersServic
         params.put("orderStatus", "PENDING");
 
         int orderInsertCount = orderMapper.insertOrder(params);
-        MybatisMap order = orderMapper.selectOrder(orderNo);
+        CamelMap order = orderMapper.selectOrder(orderNo);
         long orderId = order.getLong("orderId");
 
         List<ItemDto> items = request.getItems();

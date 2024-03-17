@@ -15,43 +15,28 @@
         </where>
     </sql>
 
-    <select id="selectOrders" resultType ="mybatisMap" parameterType="java.util.HashMap">
+    <select id="selectOrders" resultType ="camelMap" parameterType="map">
         <include refid="CommonMapper.oraclePagingPrefix"/>
         SELECT ORDER_ID, ORDER_NO
-        FROM ORDERS
-        <where>
-            <if test="orderStatus!=null">
-                AND ORDER_STATUS = #{orderStatus}
-            </if>
-            <if test="startDate!=null and endDate!=null">
-                AND MODIFIED_DATE BETWEEN #{startDate} and #{endDate}
-            </if>
-        </where>
+        <include refid="OrdersMapperDao.selectOrdersPiece"/>
         ORDER BY ORDER_ID DESC
         <include refid="CommonMapper.oraclePagingSuffix"/>
     </select>
 
-    <select id="selectOrdersCount" resultType ="int" parameterType="java.util.HashMap">
+    <select id="selectOrdersCount" resultType ="int" parameterType="map">
         SELECT COUNT(*)
-        FROM ORDERS
-        <where>
-            <if test="orderStatus!=null">
-                AND ORDER_STATUS = #{orderStatus}
-            </if>
-            <if test="startDate!=null and endDate!=null">
-                AND MODIFIED_DATE BETWEEN #{startDate} and #{endDate}
-            </if>
-        </where>
+        <include refid="OrdersMapperDao.selectOrdersPiece"/>
     </select>
 
 
-    <select id="selectOrder" resultType ="mybatisMap" parameterType="java.lang.String">
+    <select id="selectOrder" resultType ="camelMap" parameterType="string">
+        /* OrdersMapperDao.selectOrder */
         SELECT ORDER_ID, ORDER_NO, ORDER_STATUS, CREATED_DATE, MODIFIED_DATE
         FROM ORDERS
         WHERE ORDER_NO = #{orderNo}
     </select>
 
-    <insert id="insertOrder" parameterType="java.util.HashMap" >
+    <insert id="insertOrder" parameterType="map" >
         INSERT
         INTO ORDERS
         (ORDER_ID, ORDER_NO, ORDER_STATUS, CREATED_DATE, MODIFIED_DATE)
@@ -59,7 +44,7 @@
         (NEXTVAL('orders_seq'), #{orderNo}, #{orderStatus}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
     </insert>
 
-    <update id="updateOrderStatus" parameterType="java.util.HashMap">
+    <update id="updateOrderStatus" parameterType="map">
         UPDATE ORDERS
         SET ORDER_STATUS = #{orderStatus}
         WHERE 1=1

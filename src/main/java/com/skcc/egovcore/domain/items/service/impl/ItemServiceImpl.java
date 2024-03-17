@@ -15,7 +15,7 @@ import java.util.Map;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class ItemServiceImplSk extends SkAbstractService implements ItemService {
+public class ItemServiceImpl extends SkAbstractService implements ItemService {
 
     private final ItemMapper itemMapper;
 

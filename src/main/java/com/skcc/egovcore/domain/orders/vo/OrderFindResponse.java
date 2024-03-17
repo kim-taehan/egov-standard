@@ -1,6 +1,6 @@
 package com.skcc.egovcore.domain.orders.vo;
 
-import com.skcc.egovcore.core.mvc.mapper.MybatisMap;
+import com.skcc.egovcore.core.mvc.mapper.CamelMap;
 import com.skcc.egovcore.domain.items.vo.ItemDto;
 import com.skcc.egovcore.domain.orders.mapper.OrderStatus;
 import lombok.Builder;
@@ -34,7 +34,7 @@ public class OrderFindResponse {
         this.items.addAll(items);
     }
 
-    public static OrderFindResponse of(MybatisMap order, List<MybatisMap> items) {
+    public static OrderFindResponse of(CamelMap order, List<CamelMap> items) {
 
         OrderFindResponse res = OrderFindResponse.builder()
                 .orderNo(order.getStr("orderNo"))
@@ -47,7 +47,7 @@ public class OrderFindResponse {
         return res;
     }
 
-    private static List<ItemDto> convertItems(List<MybatisMap> items) {
+    private static List<ItemDto> convertItems(List<CamelMap> items) {
         return items.stream().map(item ->
                         ItemDto.builder()
                                 .itemType(item.getStr("itemType"))

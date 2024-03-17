@@ -13,8 +13,10 @@
     - 2.2 paging
         + [2.2.1 paging aop](document%2Fpaging%2Fpaging_aop.md)
         + [2.2.2 paging 사용법](document%2Fpaging%2Fused%20paging.md)(개발자교육)  
-      
 
+    - 2.3 Exception 처리
+    - 2.4 Message 처리
+  
 * 3 Spring
     - 3.1 Spring 기본
         + [3.1.2 Dependency Injection](document%2Fspring%2FDependency-Injection.md) (개발자교육)
@@ -28,8 +30,8 @@
             + [3.2.2.1 Transaction 관리](document%2Fspring%2Fservice%2Ftransaction.md)
         + 3.2.3 Repository
         + 3.2.4 Mapper
-            + MyBatis Sql 사용법
-            + MyBatis 문법 알고쓰자
+            + [3.2.4.1 MyBatis Sql 사용법](document%2Fspring%2Fmapper%2Fused_sql.md)
+            + [MyBatis 동적쿼리](document%2Fspring%2Fmapper%2Fdynamic_sql.md)
         + 3.2.4 Data
 
 

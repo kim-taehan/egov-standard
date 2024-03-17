@@ -3,15 +3,11 @@ package com.skcc.egovcore.core.mvc.mapper;
 import org.apache.commons.collections4.map.ListOrderedMap;
 import org.egovframe.rte.psl.dataaccess.util.CamelUtil;
 import org.springframework.util.Assert;
-import org.springframework.util.NumberUtils;
-import org.springframework.util.StringUtils;
 
 import java.sql.Timestamp;
-import java.util.EnumSet;
-import java.util.HashMap;
 import java.util.Objects;
 
-public class MybatisMap extends ListOrderedMap {
+public class CamelMap extends ListOrderedMap {
 
     @Override
     public Object put(Object key, Object value) {
