@@ -30,4 +30,33 @@ public class PagingAspect {
 ### 2. Repository Aop
 - 수행 조건: `Repository` 메서드에서 `@PageQuery` 어노테이션을 가지고 있으며, Map 타입으로 param 이 넘어올때  
 - before: RequestAttr에서 PageDto 를 추출하여 Map 타입으로 구현된 Param에 입력한다.
-- after: 조회 쿼리 아이디 + `Count` 로 구현된 쿼리에서 카운트 쿼리 수행후 그 결과를 PageDto에 입력한다
+- after:조회 쿼리 아이디 + `Count` 로 구현된 쿼리에서 카운트 쿼리 수행후 그 결과를 PageDto에 입력한다
+
+```java
+public class PagingAspect {
+
+    public static final String SUFFIX_ID = "Count";
+    private final PagingMapper pagingMapper;
+
+    @Around("@annotation(pageQuery)")
+    public Object doPageQuery(ProceedingJoinPoint joinPoint, PageQuery pageQuery) throws Throwable {
+
+        HttpServletRequest request = extractRequest();
+        PageDto page = (PageDto) request.getAttribute("page");
+
+        updatePageArgs(joinPoint, page);
+
+        // paging query execute
+        Object result = joinPoint.proceed();
+
+        // find count sql query
+        String queryId = pageQuery.value() + SUFFIX_ID;
+
+        // count query execute
+        int totalCount = findTotalCount(queryId, joinPoint.getArgs());
+
+        page.updateTotal(totalCount);
+        return result;
+    }
+}
+```

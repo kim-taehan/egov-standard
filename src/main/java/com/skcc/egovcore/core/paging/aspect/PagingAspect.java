@@ -40,7 +40,7 @@ public class PagingAspect {
     }
 
     @Around("@annotation(pageQuery)")
-    public Object doCheckMethod(ProceedingJoinPoint joinPoint, PageQuery pageQuery) throws Throwable {
+    public Object doPageQuery(ProceedingJoinPoint joinPoint, PageQuery pageQuery) throws Throwable {
 
         HttpServletRequest request = extractRequest();
         PageDto page = (PageDto) request.getAttribute("page");
