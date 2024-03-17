@@ -17,6 +17,7 @@
     - 2.3 Exception 처리
     - 2.4 Message 처리
   
+  
 * 3 Spring
     - 3.1 Spring 기본
         + [3.1.2 Dependency Injection](document%2Fspring%2FDependency-Injection.md) (개발자교육)
@@ -33,7 +34,7 @@
             + [3.2.4.1 MyBatis Sql 사용법](document%2Fspring%2Fmapper%2Fused_sql.md)
             + [MyBatis 동적쿼리](document%2Fspring%2Fmapper%2Fdynamic_sql.md)
         + 3.2.4 Data
-
+    - 3.3 Spring batch
 
 * 4 Open Source
     - 4.1 Lombok
@@ -41,3 +42,8 @@
 
 
 * 5 Test Code 
+    - 5.1 junit 5
+    - 5.2 Controller test
+    - 5.3 Service test
+    - 5.4 Repository test
+    - 5.5 Mapper test
