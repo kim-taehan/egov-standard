@@ -25,3 +25,10 @@ mybatis:
   type-aliases-package: com.skcc.egovcore
   configuration:
     map-underscore-to-camel-case: true
+
+netty:
+  tcp-port: 8090
+  netty.boss-count: 1
+  netty.worker-count: 10
+  netty.keep-alive: true
+  netty.backlog: 100
