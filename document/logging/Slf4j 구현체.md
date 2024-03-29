@@ -56,14 +56,14 @@ implementation 'org.springframework.boot:spring-boot-starter-log4j2'
 | sl4j 구현체| 총 가상사용자| TPS| 최고 TPS| 평균 테스트시간(ms)|
 | --| --| --| --| --|
 | Log4j2|  20개(Ramp-Up 사용)| 238.6| 634.0| 34.42|
-| Logback|  20개20개(Ramp-Up 사용)| 229.6| 594.5| 39.66|
+| Logback|  20개(Ramp-Up 사용)| 229.6| 594.5| 39.66|
  
 
 
-- Logback
-![image](https://github.com/kim-taehan/egov-standard/assets/52950400/0d099c02-7f91-4082-8d21-2e5c5d1b1669)
-
 - Log4j2
 ![image](https://github.com/kim-taehan/egov-standard/assets/52950400/4b01190d-0ffc-4419-b2b6-edb732eca75c)
+
+- Logback
+![image](https://github.com/kim-taehan/egov-standard/assets/52950400/0d099c02-7f91-4082-8d21-2e5c5d1b1669)
 
 
